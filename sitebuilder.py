@@ -15,7 +15,6 @@ freezer = Freezer(app)
 pages_list = [i for i in pages]
 menu_pages = [i for i in pages_list if 'priority' in i.meta.keys()]
 menu = sorted(menu_pages, key=lambda p: p.meta['priority'])
-print menu
 
 @app.route('/')
 def index():
