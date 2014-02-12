@@ -1,0 +1,25 @@
+<ul class="nav navbar-nav">
+		{% for page in pages if 'menu' in page.meta.tags%}
+			<li class="dropdown">
+				<a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+			</li>
+		{% endfor %}
+
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">مقالات <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+				{% for page in pages if 'article' in page.meta.tags%}
+					<li>
+						<a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+					</li>
+				{% endfor %}
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a href="{{ url_for("reports")}}">گزارش جلسات</a>
+			</li>
+			<li class="dropdown">
+				<a href="{{ url_for("news")}}">آرشیو خبری</a>
+			</li>
+</ul>
+
