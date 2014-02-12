@@ -1,7 +1,7 @@
 <ul class="nav navbar-nav">
 		{% for page in pages if 'menu' in page.meta.tags%}
 			<li class="dropdown">
-				<a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+				<a href="{{page.path}}" data-old="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
 			</li>
 		{% endfor %}
 
@@ -10,7 +10,7 @@
 				<ul class="dropdown-menu">
 				{% for page in pages if 'article' in page.meta.tags%}
 					<li>
-						<a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+						<a href="{{page.path}}" data-href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
 					</li>
 				{% endfor %}
 				</ul>

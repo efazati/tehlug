@@ -58,7 +58,7 @@ priority: 1
 
 بنر استاندارد:
 <br>
-<img src="http://tehlug.org/images/banner.png" alt="گروه کاربران لینوکس تهران" title="گروه کاربران لینوکس تهران">
+<img src="/files/images/banner.png" alt="گروه کاربران لینوکس تهران" title="گروه کاربران لینوکس تهران">
 <br>
 کد آماده برای استفاده:
 <br>
