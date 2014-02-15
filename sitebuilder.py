@@ -7,6 +7,7 @@ from flask_frozen import Freezer
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
+FLATPAGES_ROOT = '/home/tax/Workspace/test/test/'
 
 app = Flask(__name__, static_folder='files')
 app.config.from_object(__name__)
@@ -23,6 +24,7 @@ def index():
 @app.route('/<path:path>/')
 def page(path):
 	page=pages.get_or_404(path)
+	print page.path
 	return render_template('page.html', page=page, pages=pages, menu=menu)
 
 @app.route('/reports/')

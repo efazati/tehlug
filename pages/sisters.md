@@ -12,11 +12,11 @@ priority: 5
 </a>
 
 <a href="http://tabrix.org/">
-	<img src="/files/images/tablug.jpg" class="photo">
+	<img src="./files/images/tablug.jpg" class="photo">
 </a>
 
 <a href="http://yazdlug.org/index.php?option=com_frontpage&amp;Itemid=28">
-	<img src="/files/images/yazdlug.jpg" class="photo">
+	<img src="./files/images/yazdlug.jpg" class="photo">
 </a>
 
 <a href="http://www.mashhadlug.org/">
