@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="col-md-6 main_block">
+	    <h1 class="title_2">تهران لاگ چیست</h1>
+	    <div class="block_content">
+	        <ul class="entries">
+	        	{% with page=reports[0] %}
+	            <li class="entry">
+	                <div class="entry_title">
+	                 جلسه بعدی:<a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+	                </div>
+	                <div class="date">{{ page.meta.date_string }}</div>
+	                <div class="clearfix"></div>
+	            </li>
+	            {% endwith %}
+	            {% for page in reports[1:3] %}
+	            <li class="entry">
+	                <div class="entry_title">
+	                <a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+	                </div>
+	                <div class="date">{{ page.meta.date_string }}</div>
+	                <div class="clearfix"></div>
+	            </li>
+	            {% endfor %}
+	        </ul>
+	    </div>
+	</div>
+    {% for page in pages if 'entry' in page.meta.tags %}
+            {{ page }}
+    {% endfor %}
+{% endblock content %}

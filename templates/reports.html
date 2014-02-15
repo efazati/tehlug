@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul id="sessions" class="results">
+    	{% for page in reports %}
+
+    	<li class="entry">
+
+			<div class="title">
+				<a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+			</div>
+
+			<div class="date">{{ page.meta.date_string }}</div>
+
+			<div>&nbsp- {{ page.meta.subject }}</div>
+
+		</li>
+    	{% endfor %}
+    </ul>
+{% endblock content %}
