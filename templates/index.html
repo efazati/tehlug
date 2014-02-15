@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-
-{% block content %}
-    {% for page in pages %}
-        {% if 'entry' in page.meta.tags %}
-            {{ page }}
-        {% endif %}
-    {% endfor %}
-{% endblock content %}
