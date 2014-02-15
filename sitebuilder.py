@@ -7,11 +7,10 @@ from flask_frozen import Freezer
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
-FLATPAGES_ROOT = '/home/tax/Workspace/test/test/'
 
 app = Flask(__name__, static_folder='files')
 app.config.from_object(__name__)
-app.config.update(APPLICATION_ROOT='/build')
+app.config.update(FREEZER_BASE_URL='/build')
 pages = FlatPages(app)
 freezer = Freezer(app)
 pages_list = [i for i in pages]
