@@ -1,6 +1,6 @@
 body
 {
-    font-family: iraniansans;
+    font-family: Droid Arabic Naskh;
     background: white;
     font-size : 12px;
     direction: rtl;
@@ -14,6 +14,8 @@ body
 .navbar-nav li.dropdown > a
 {
     color: #ffffff !important;
+    padding: 2px;
+    margin: 18px 10px;
 }
 .navbar-nav li.dropdown > a:hover
 {
@@ -28,6 +30,10 @@ body
 .navbar-default .navbar-nav > .dropdown > a .caret {
     border-bottom-color: #ffffff !important;
     border-top-color: #ffffff !important;
+}
+.navbar-header
+{
+    margin-top: 5px;
 }
 .search_button
 {
@@ -57,9 +63,14 @@ body
 }
 #menu_container 
 {
-    font-family: "Titr",arial,verdana,arial,helvetica,clean,sans-serif;
     font-size: 15px;
+    font-family: Droid arabic naskh;
 }
+#menu_container ul, .navbar-brand
+{
+    font-family: BTitr, Droid arabic naskh;
+}
+
 .main_block
 {
     margin-top: 10px;
@@ -144,4 +155,8 @@ div.title
     margin-top: 10px;
     max-height: 400px;
     max-width: 500px;
+}
+#content h2, h1, h3, h4, h5, h6
+{
+    font-family: Droid arabic naskh, BTitr
 }

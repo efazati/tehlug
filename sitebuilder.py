@@ -15,14 +15,14 @@ pages = FlatPages(app)
 freezer = Freezer(app)
 pages_list = [i for i in pages]
 menu_pages = [i for i in pages_list if 'priority' in i.meta.keys()]
-menu = sorted(menu_pages, key=lambda p: p.meta['priority'])
-reports=[i for i in pages_list 
-if 'tags' in i.meta.keys() and 'report' in i.meta['tags']]
+reports=[i for i in pages_list if 'tags' in i.meta.keys() and 'report' in i.meta['tags']]
+entries = [i for i in pages_list if 'tags' in i.meta.keys() and 'entry' in i.meta['tags']]
 sorted_reports = sorted(reports, reverse=True, key=lambda p: p.meta['date'])
+menu = sorted(menu_pages, key=lambda p: p.meta['priority'])
 
 @app.route('/')
 def index():
-    return render_template('index.html', pages=pages, menu=menu, reports=sorted_reports)
+    return render_template('index.html', entries=entries, menu=menu, reports=sorted_reports)
 
 @app.route('/<path:path>/')
 def page(path):
@@ -31,13 +31,11 @@ def page(path):
 
 @app.route('/reports/')
 def reports():
-	return render_template('reports.html', pages=pages, 
-		reports=sorted_reports, menu=menu)
+	return render_template('reports.html', reports=sorted_reports, menu=menu)
 
 @app.route('/news/')
 def news():
-	news=[i for i in pages_list 
-	if 'tags' in i.meta.keys() and 'news' in i.meta['tags']]
+	news=[i for i in pages_list if 'tags' in i.meta.keys() and 'news' in i.meta['tags']]
 	return render_template('news.html', pages=pages, news=sorted(news, reverse=True, key=lambda p: p.meta['date']), menu=menu)
 
 if __name__ == '__main__':
